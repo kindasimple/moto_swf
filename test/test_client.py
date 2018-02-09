@@ -14,7 +14,7 @@ def test_query_domains():
         region_name='us-west-1',
         endpoint_url="http://localhost:5000"
     )
-    #client.register_domain(name="test-domain", workflowExecutionRetentionPeriodInDays="1", description="A test domain")
+    client.register_domain(name="test-domain", workflowExecutionRetentionPeriodInDays="1", description="A test domain")
     domains = client.list_domains(registrationStatus="REGISTERED")
     assert domains is not None
     assert len(domains["domainInfos"]) == 1
